@@ -135,7 +135,7 @@ class SlideController extends Controller
     public function store(Request $request)
     {
         $pictures_name = time().'.'.$request->file->getClientOriginalExtension();
-        $uploadPath = "uploads/".$pictures_name;
+        $uploadPath = "public/uploads/".$pictures_name;
         $request->file->move(public_path('uploads'), $pictures_name);
         $company_id = auth()->user()->company_id;
         $s = Slide::create([
@@ -204,7 +204,7 @@ class SlideController extends Controller
     public function update(Request $request, Slide $slide)
     {
         $picture_name = time().'.'.$request->file->getClientOriginalExtension();
-        $uploadPath = "uploads/".$picture_name;
+        $uploadPath = "public/uploads/".$pictures_name;
         $slide->caption1 = $request->caption1;
         $slide->caption2 = $request->caption2;
         $slide->photo_paht = $uploadPath;

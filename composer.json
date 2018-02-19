@@ -11,7 +11,8 @@
         "dingo/api": "1.0.x@dev",
         "barryvdh/laravel-cors": "^0.8.2",
         "unisharp/laravel-ckeditor": "^4.7",
-        "unisharp/laravel-filemanager": "~1.8"
+        "unisharp/laravel-filemanager": "~1.8",
+        "barryvdh/laravel-dompdf": "^0.8.2"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

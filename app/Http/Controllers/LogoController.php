@@ -71,7 +71,7 @@ class LogoController extends Controller
     public function store(Request $request)
     {
         $picture_name = time().'.'.$request->file->getClientOriginalExtension();
-        $uploadPath = "uploads/".$picture_name;
+        $uploadPath = "public/uploads/".$picture_name;
         $company_id = auth()->user()->company_id;
         Logo::create([
             'company_id'=>$company_id,
@@ -124,7 +124,7 @@ class LogoController extends Controller
     public function update(Request $request, Logo $logo)
     {
         $picture_name = time().'.'.$request->file->getClientOriginalExtension();
-        $uploadPath = "uploads/".$picture_name;
+        $uploadPath = "public/uploads/".$picture_name;
         $logo->photo_path = $uploadPath;
         $logo->save();
         $message = "you have successfully updated your logo";

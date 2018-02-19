@@ -94,7 +94,7 @@ class SupplyController extends Controller
     public function store(Request $request)
     {
         $picture_name = time().'.'.$request->file->getClientOriginalExtension();
-        $uploadPath = "uploads/".$picture_name;
+        $uploadPath = "public/uploads/".$picture_name;
         $company_id = auth()->user()->company_id;
         Supply::create([
             'company_id'=> $company_id,
@@ -188,7 +188,7 @@ class SupplyController extends Controller
     public function update(Request $request, Supply $supply)
     {
         $picture_name = time().'.'.$request->file->getClientOriginalExtension();
-        $uploadPath = "uploads/".$picture_name;
+        $uploadPath = "public/uploads/".$picture_name;
         $supply->title = $request->title;
         $supply->price = $request->price;
         $supply->total_quantity = $request->quantity;

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Service;
+use App\ServiceCategory;
 use Illuminate\Http\Request;
 
 class ServiceController extends Controller
@@ -12,9 +13,15 @@ class ServiceController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($title)
     {
-        //
+        $services = Service::join('service_categories','service_categories.id','=','services.service_category_id')
+            ->join('companies','companies.id','=','services.company_id')
+            ->select(['services.title','services.description','services.id','services.created_at','companies.name as company'])
+            ->orderBy('services.id','desc')
+            ->where('service_categories.name',$title)->get();
+        $ser = $services->first();
+        return view('showService',compact(['services','title','ser']));
     }
 
     /**
@@ -24,7 +31,8 @@ class ServiceController extends Controller
      */
     public function create()
     {
-        //
+        $title = "post your services";
+        return view('cfc.addService', compact('title'));
     }
 
     /**
@@ -35,7 +43,16 @@ class ServiceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Service::create([
+           'company_id'=>auth()->user()->company_id,
+           'service_category_id' => $request->category,
+           'title' => $request->title,
+           'description' => $request->text
+        ]);
+        $message = "you have successfully posted your service";
+        session()->regenerate();
+        session()->flash('saved',$message);
+        return redirect()->back();
     }
 
     /**
@@ -46,7 +63,17 @@ class ServiceController extends Controller
      */
     public function show(Service $service)
     {
-        //
+        $services = Service::join('service_categories','service_categories.id','=','services.service_category_id')
+            ->join('companies','companies.id','=','services.company_id')
+            ->select(['services.title','services.description','services.id','services.created_at','companies.name as company'])
+            ->orderBy('services.id','desc')
+            ->where('service_categories.id',$service->service_category_id)->get();
+        $s = ServiceCategory::find($service->service_category_id);
+        $title = $s->name;
+        $ser = Service::join('companies','companies.id','=','services.company_id')
+            ->select(['services.title','services.description','services.id','services.created_at','companies.name as company'])
+                            ->where('services.id',$service->id)->get();
+        return view('showService1',compact(['services','title','ser']));
     }
 
     /**

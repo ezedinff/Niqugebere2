@@ -119,6 +119,7 @@
             .p * { visibility: visible; }
             .p { position: absolute; top: 40px; left: 30px; }
         }
+
     </style>
 </head>
 <body style="overflow-x: hidden;">
@@ -188,7 +189,13 @@
 <script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
 <script src="/vendor/unisharp/laravel-ckeditor/adapters/jquery.js"></script>
 <script>
-    $('textarea').ckeditor();
+    var options = {
+        filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
+        filebrowserImageUploadUrl: '/laravel-filemanager/upload?type=Images&_token=',
+        filebrowserBrowseUrl: '/laravel-filemanager?type=Files',
+        filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token='
+    };
+    $('#editor').ckeditor(options);
     // $('.textarea').ckeditor(); // if class is prefered.
 </script>
 <script>

@@ -94,7 +94,7 @@ class DemandController extends Controller
     public function store(Request $request)
     {
         $picture_name = time().'.'.$request->file->getClientOriginalExtension();
-        $uploadPath = "uploads/".$picture_name;
+        $uploadPath = "public/uploads/".$picture_name;
         $company_id = auth()->user()->company_id;
         Demand::create([
             'company_id'=> $company_id,
@@ -188,7 +188,7 @@ class DemandController extends Controller
     public function update(Request $request, Demand $demand)
     {
         $picture_name = time().'.'.$request->file->getClientOriginalExtension();
-        $uploadPath = "uploads/".$picture_name;
+        $uploadPath = "public/uploads/".$picture_name;
         $demand->title = $request->title;
         $demand->price = $request->price;
         $demand->total_quantity = $request->quantity;

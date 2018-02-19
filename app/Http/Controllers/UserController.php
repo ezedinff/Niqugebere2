@@ -32,6 +32,9 @@ class UserController extends Controller
                                 ->where(['transportation_bids.win'=>1])->get();
         return view('transporter.profile',compact('wins'));
     }
+    public function egaa(){
+        return view('EGAA.profile');
+    }
 
     public function index(){}
     public function create(){}
