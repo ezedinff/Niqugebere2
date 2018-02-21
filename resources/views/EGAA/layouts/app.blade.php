@@ -122,7 +122,7 @@
 <div class="row">
     <div class="row">
         <header>
-            @include('admin.layouts.header' )
+            @include('EGAA.layouts.header' )
         </header>
     </div>
     <div class="row" style="overflow-x: hidden;">
@@ -181,14 +181,24 @@
 <!-- Scripts -->
 <script src="{{ asset('js/jquery.min.js') }}"></script>
 <script src="{{asset('js/angular.min.js')}}"></script>
-<script src="{{asset('js/addsp.js')}}"></script>
-<script src="{{asset('js/editMall.js')}}"></script>
-<script src="{{asset('js/addHotel.js')}}"></script>
 <script src="{{asset("js/materialize.min.js")}}"></script>
+<script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
+<script src="/vendor/unisharp/laravel-ckeditor/adapters/jquery.js"></script>
+<script>
+    var options = {
+        filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
+        filebrowserImageUploadUrl: '/laravel-filemanager/upload?type=Images&_token=',
+        filebrowserBrowseUrl: '/laravel-filemanager?type=Files',
+        filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token='
+    };
+    $('#editor').ckeditor(options);
+    // $('.textarea').ckeditor(); // if class is prefered.
+</script>
 <script>
     $(function () {
 
         $('.button-collapse').sideNav();
+
         $('select').material_select();
         $('.dropdown-button').dropdown({
                 inDuration: 300,

@@ -25,8 +25,9 @@ class MessageController extends Controller
      */
     public function create()
     {
-        $companies = Company::all();
-        return view('EGAA.message',compact('companies'));
+
+        $companies = Company::where('category_id',1)->get();
+        return view('EGAA.message',compact(['title','companies']));
     }
 
     /**
@@ -37,7 +38,18 @@ class MessageController extends Controller
      */
     public function store(Request $request)
     {
-        return $request->all();
+
+        $data= array();
+        $to = $request->to;
+        for ($i = 0; $i < sizeof($to); $i++){
+            $data[$i] = array('from_id' => auth()->user()->company_id,'to_id'=>$to[$i],'subject'=> $request->subject, 'message'=>$request->message);
+        }
+        Message::insert($data);
+        $message = "the message sent successfully";
+        session()->regenerate();
+        session()->flash('saved',$message);
+        return redirect()->back();
+
     }
 
     /**

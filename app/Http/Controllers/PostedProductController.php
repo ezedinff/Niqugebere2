@@ -107,7 +107,7 @@ class PostedProductController extends Controller
     public function store(Request $request)
     {
         $pictures_name = time().'.'.$request->file->getClientOriginalExtension();
-        $uploadPath = "uploads/".$pictures_name;
+        $uploadPath = "public/uploads/".$pictures_name;
         $request->file->move(public_path('uploads'), $pictures_name);
         posted_product::create([
             'company_id' => auth()->user()->company_id,
@@ -211,7 +211,7 @@ class PostedProductController extends Controller
     public function update(Request $request, posted_product $post)
     {
         $pictures_name = time().'.'.$request->file->getClientOriginalExtension();
-        $uploadPath = "uploads/".$pictures_name;
+        $uploadPath = "public/uploads/".$pictures_name;
         $request->file->move(public_path('uploads'), $pictures_name);
         $post->product_sub_category_id = $request->subcategory;
         $post->product_name = $request->title;

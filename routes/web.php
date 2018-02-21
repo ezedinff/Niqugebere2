@@ -24,8 +24,17 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/pdf-generate','PDFGenerator@inventoryPdf');
 Auth::routes();
 Route::get('/show-cfc/{company}','CompanyController@show');
+Route::get('/show-cfc/{company}/products','CompanyController@showProductsCategory');
+Route::get('/show-cfc/{company}/products/{title}','CompanyController@showProducts');
+Route::get('/show-cfc/{company}/services','CompanyController@showServiceCategory');
+Route::get('/show-cfc/{company}/services/{title}','CompanyController@showServices');
+Route::get('/show-cfc/{company}/news-and-event','CompanyController@showNews');
+Route::get('/show-cfc/{company}/about-us','CompanyController@showAbout');
+Route::get('/show-cfc/{company}/contact-us','CompanyController@showContact');
+Route::post('/show-cfc/{company}/contact-us','ContactController@store');
 Route::get('/market/{title}', 'PagesController@goToMarket');
 Route::get('/get-subcategories','ProductSubCategoryController@getSubCategory');
 
@@ -61,12 +70,13 @@ Route::get('cfc/requests-to-deliver','DemandAggrementController@showForDemandPos
 Route::get('cfc/accept-request/{agreement}','DemandAggrementController@accept');
 Route::get('cfc/transporters-bid','TransportationBidController@index');
 Route::get('cfc/accept-request-transporter/{transportationBid}','TransportationBidController@update');
-Route::get('cfc/service',function (){
-   return view('cfc.addService');
-});
+Route::get('service/{title}','ServiceController@index');
+Route::resource('cfc/service','ServiceController');
 Route::get('/supplier','UserController@supplier')->name("supplier");
 Route::resource('/supplier/product','InventoryController');
 Route::get('/supplier/demands','DemandController@cfcDemand');
+Route::get('cfc/purchasing-request/create','PurchasingRequestController@create');
+Route::post('cfc/purchasing-request','PurchasingRequestController@store');
 
 
 
@@ -78,3 +88,14 @@ Route::get('/transporter/get-customers-waiting-for-logistics','DemandAggrementCo
 //Route::resource('/transporter/transportationBid','TransportationBidController');
 Route::get('/transporter/transportationBid/create/{id}','TransportationBidController@create');
 Route::post('/transporter/transportationBid/store/{id}','TransportationBidController@store');
+
+
+
+
+//egaa
+
+Route::get('/admin-egaa','UserController@egaa')->name('egaa');
+Route::get('/admin-egaa/send-message','MessageController@create');
+Route::post('/admin-egaa/send-message','MessageController@store');
+Route::get('/admin-egaa/purchasing-requests','PurchasingRequestController@index');
+Route::post('/admin-egaa/purchasing-requests/pdf','PDFGenerator@purchase');

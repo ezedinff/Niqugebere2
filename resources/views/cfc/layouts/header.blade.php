@@ -63,11 +63,29 @@
             <li><a href="{{url('cfc/post')}}">my posted items</a></li>
         </ul>
     </li>
+    <li><a class="collapsible-header"><i class="fa fa-gear"></i>Manage Service<span class="fa fa-chevron-down"></span></a>
+        <ul class="collapsible-body">
+            <li><a href="{{url('cfc/service/create')}}">post service</a></li>
+            <li><a href="{{url('cfc/service')}}">my posted services</a></li>
+        </ul>
+    </li>
+    <li><a class="collapsible-header"><i class="fa fa-gear"></i>purchasing requests<span class="fa fa-chevron-down"></span></a>
+        <ul class="collapsible-body">
+            <li><a href="{{url('cfc/purchasing-request/create')}}">send purchasing request</a></li>
+            <li><a href="{{url('cfc/service')}}">my requests</a></li>
+        </ul>
+    </li>
     <li><a class="collapsible-header"><i class="fa fa-gear"></i>Manage interests<span class="fa fa-chevron-down"></span></a>
         <ul class="collapsible-body">
             <li><a href="{{url('cfc/requests-to-deliver')}}">requests to deliver</a></li>
             <li><a href="{{url('cfc/my-requests')}}">my requests</a></li>
             <li><a href="{{url('cfc/transporters-bid')}}">transporters bid</a></li>
+        </ul>
+    </li>
+    <li><a class="collapsible-header"><i class="fa fa-comments"></i>Message & feedback<span class="fa fa-chevron-down"></span></a>
+        <ul class="collapsible-body">
+            <li><a href="{{url('cfc/requests-to-deliver')}}">message from egaa</a></li>
+            <li><a href="{{url('cfc/my-requests')}}">message from clients</a></li>
         </ul>
     </li>
     <li><a class="collapsible-header"><i class="fa fa-laptop"></i>Manage layouts<span class="fa fa-chevron-down"></span></a>

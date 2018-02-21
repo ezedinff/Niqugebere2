@@ -31,29 +31,26 @@
                     <div class="user-view" style="padding-left: 2%; text-align: center;">
                         <img class="circle" style="margin-left: 7.5em;" src="{{asset('img/default_pic.png')}}"><br>
                         <a><span class="name">{{auth()->user()->first_name}} {{auth()->user()->last_name}}</span></a>
-                        <a ><span class="email" style=" text-transform: uppercase;">commercial farm center's Admin</span></a>
+                        <a ><span class="email" style=" text-transform: uppercase;">EGAA Admin</span></a>
                     </div>
                 </li>
                 <li >
-                    <a class="collapsible-header" href="{{url('/admin/dashboard')}}">
+                    <a class="collapsible-header" href="{{url('/admin-egaa')}}">
                         <i class="fa fa-dashboard"></i> Dashboard
                     </a>
                 </li>
-                    <li><a class="collapsible-header" ><i class="fa fa-gear"></i> Manage Details <span class="fa fa-chevron-down"></span></a>
-                        <ul class="collapsible-body">
-                            <li><a href="{{url('admin/zoneTranslation/create')}}">zone</a></li>
-                            <li><a href="{{url('/admin/add-woreda')}}">woreda</a></li>
-                            <li><a href="{{url('/admin/productSubCategory')}}">sub category</a></li>
-                        </ul>
-                    </li>
-                <li><a class="collapsible-header"><i class="fa fa-users"></i> Manage users<span class="fa fa-chevron-down"></span></a>
-                    <ul class="collapsible-body">
-                        <li><a href="{{url('/admin/cfs')}}">FSC</a></li>
-                        <li><a href="{{url('/admin/suppliers')}}">suppliers</a></li>
-                    </ul>
+                <li >
+                    <a class="collapsible-header" href="{{url('/admin-egaa/send-message')}}">
+                        <i class="fa fa-comment"></i> compose a message
+                    </a>
                 </li>
                 <li >
-                    <a class="collapsible-header" href="{{url('/admin/dashboard')}}">
+                    <a class="collapsible-header" href="{{url('/admin-egaa/purchasing-requests')}}">
+                        <i class="fa fa-question"></i> purchasing requests
+                    </a>
+                </li>
+                <li >
+                    <a class="collapsible-header" href="{{url('/admin-egaa')}}">
                         <i class="fa fa-file-o"></i> Generate Report
                     </a>
                 </li>

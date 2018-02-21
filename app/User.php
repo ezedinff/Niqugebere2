@@ -2,11 +2,12 @@
 
 namespace App;
 
-use Hash;
+
+use Illuminate\Contracts\Auth\CanResetPassword;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends Authenticatable
+class User extends Authenticatable implements CanResetPassword
 {
     use Notifiable;
 
@@ -26,10 +27,4 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    /**
-     * Automatically creates hash for the user password.
-     *
-     * @param  string  $value
-     * @return void
-     */
 }

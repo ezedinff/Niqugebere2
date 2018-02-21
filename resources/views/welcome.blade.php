@@ -128,6 +128,64 @@
 
         </div>
     </div>
+
+
+    <div class="section scrollspy">
+        <div class="row">
+            <div class="sec-title text-center">
+                <h2 class="flow-text he" style="text-align: center;">Services</h2>
+                <p class="pa">services provided by commercial farm centers</p>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <a class="col l4 m4 s12" href='{{url("service/AI Service")}}'>
+                        <div class="card blue center" style="height: 15em; padding-top: 6em;">
+                            <div class="card-title white-text">AI Service</div>
+                        </div>
+                    </a>
+                    <a class="col l4 m4 s12" href='{{url("service/Repair and Maintenance")}}' >
+                        <div class="card orange center-align" style="height: 15em; padding-top: 6em;">
+                            <div class="white-text card-title">
+                                Repair and Maintenance
+                            </div>
+                        </div>
+                    </a>
+                    <a class="col l4 m4 s12"  href='{{url("service/Spare parts")}}' >
+                        <div class="card green center-align" style="height: 15em; padding-top: 6em;">
+                            <div class="white-text card-title">
+                                Spare parts
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- second row of market -->
+                <div class="row">
+                    <a class="col l4 m4 s12" href='{{url("service/Training")}}'>
+                        <div class="card red center-align" style="height: 15em; padding-top: 6em;">
+                            <div class="white-text card-title">
+                                Training
+                            </div>
+                        </div>
+                    </a>
+                    <a class="col l4 m4 s12" href='{{url("service/ON farm service")}}'>
+                        <div class="card purple center-align" style="height: 15em; padding-top: 6em;">
+                            <div class="white-text card-title">
+                                ON farm service
+                            </div>
+                        </div>
+                    </a>
+                    <a class="col l4 m4 s12" href='{{url("/cfc/service/OFF farm service")}}'>
+                        <div class="card brown darken-3 center-align" style="height: 15em; padding-top: 6em;">
+                            <div class="white-text card-title">
+                                OFF farm service
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="section scrollspy" style="padding-bottom: 4em;">
         <div class="sec-title text-center">
             <h2 class="flow-text he">News & Events</h2>

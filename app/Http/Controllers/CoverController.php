@@ -71,7 +71,7 @@ class CoverController extends Controller
     public function store(Request $request)
     {
         $picture_name = time().'.'.$request->file->getClientOriginalExtension();
-        $uploadPath = "uploads/".$picture_name;
+        $uploadPath = "public/uploads/".$picture_name;
         $company_id = auth()->user()->company_id;
         Cover::create([
            'company_id'=>$company_id,
@@ -124,7 +124,7 @@ class CoverController extends Controller
     public function update(Request $request, Cover $cover)
     {
         $picture_name = time().'.'.$request->file->getClientOriginalExtension();
-        $uploadPath = "uploads/".$picture_name;
+        $uploadPath = "public/uploads/".$picture_name;
         $cover->photo_path = $uploadPath;
         $cover->save();
         $message = "you have successfully updated the cover picture";
