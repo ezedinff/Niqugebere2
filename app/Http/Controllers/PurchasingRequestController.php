@@ -2,10 +2,7 @@
 
 namespace App\Http\Controllers;
 
-<<<<<<< HEAD
-=======
 use App\EzBuilder\EzTableBuilder;
->>>>>>> ez_new_feature
 use App\PurchasingRequest;
 use Illuminate\Http\Request;
 
@@ -18,9 +15,6 @@ class PurchasingRequestController extends Controller
      */
     public function index()
     {
-<<<<<<< HEAD
-        //
-=======
         $purchases = PurchasingRequest::join('product_sub_categories','purchasing_requests.product_sub_category_id','=','product_sub_categories.id')
                                         ->join('product_categories','product_categories.id','=','product_sub_categories.product_category_id')
                                         ->join('companies','companies.id','=','purchasing_requests.company_id')
@@ -62,7 +56,6 @@ class PurchasingRequestController extends Controller
         $title = "List of your inventories";
         $table = EzTableBuilder::getTable($inputs,$purchases);
         return view('EGAA.requests',compact(['purchases','table']));
->>>>>>> ez_new_feature
     }
 
     /**
@@ -72,12 +65,8 @@ class PurchasingRequestController extends Controller
      */
     public function create()
     {
-<<<<<<< HEAD
-        //
-=======
         $title = "send purchasing request to EGAA";
         return view('cfc.addPurchasingRequest',compact('title'));
->>>>>>> ez_new_feature
     }
 
     /**
@@ -88,9 +77,7 @@ class PurchasingRequestController extends Controller
      */
     public function store(Request $request)
     {
-<<<<<<< HEAD
-        //
-=======
+
         PurchasingRequest::create([
             'company_id'=>auth()->user()->company_id,
             'product_sub_category_id'=>$request->subcategory,
@@ -101,7 +88,7 @@ class PurchasingRequestController extends Controller
         session()->regenerate();
         session()->flash('saved',$message);
         return redirect()->back();
->>>>>>> ez_new_feature
+
     }
 
     /**
