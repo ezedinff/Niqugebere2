@@ -15,7 +15,8 @@ class ContactController extends Controller
      */
     public function index()
     {
-        //
+        $messages = Contact::where('company_id',auth()->user()->company_id)->orderBy('created_at')->get();
+        return view('cfc.messageClient',compact('messages'));
     }
 
     /**
@@ -55,9 +56,9 @@ class ContactController extends Controller
      * @param  \App\Contact  $contact
      * @return \Illuminate\Http\Response
      */
-    public function show(Contact $contact)
+    public function show(Contact $message)
     {
-        //
+        return view('cfc.showMessageClient',compact('message'));
     }
 
     /**

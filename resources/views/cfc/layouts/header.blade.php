@@ -84,8 +84,8 @@
     </li>
     <li><a class="collapsible-header"><i class="fa fa-comments"></i>Message & feedback<span class="fa fa-chevron-down"></span></a>
         <ul class="collapsible-body">
-            <li><a href="{{url('cfc/requests-to-deliver')}}">message from egaa</a></li>
-            <li><a href="{{url('cfc/my-requests')}}">message from clients</a></li>
+            <li><a href="{{url('cfc/message-from-egaa')}}">message from egaa</a></li>
+            <li><a href="{{url('cfc/message-from-client')}}">message from clients</a></li>
         </ul>
     </li>
     <li><a class="collapsible-header"><i class="fa fa-laptop"></i>Manage layouts<span class="fa fa-chevron-down"></span></a>
