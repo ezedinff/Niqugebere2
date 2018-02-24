@@ -119,6 +119,11 @@
             .p * { visibility: visible; }
             .p { position: absolute; top: 40px; left: 30px; }
         }
+        .truncate {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
 
     </style>
 </head>
@@ -196,6 +201,7 @@
         filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token='
     };
     $('#editor').ckeditor(options);
+    $('ul.tabs').tabs('select_tab', 'tab_id');
     // $('.textarea').ckeditor(); // if class is prefered.
 </script>
 <script>

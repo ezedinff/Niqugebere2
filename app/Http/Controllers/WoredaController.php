@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\EzBuilder\EzFormBuilder;
+use App\Language;
+use App\Region;
 use App\Woreda;
+use App\Zone;
 use Illuminate\Http\Request;
 
 class WoredaController extends Controller
@@ -14,7 +18,78 @@ class WoredaController extends Controller
      */
     public function index()
     {
-        //
+        $zones = Woreda::join('zones','zones.id','=','woredas.zone_id')
+                        ->join('regions','regions.id','=','zones.region_id')
+                        ->select(['zones.name as zone','regions.name as region', 'woredas.id','woredas.name as woreda'])->paginate(10);
+        $languages = Language::all();
+        $zone  = Zone::all();
+        $regions = Region::all();
+        $inputs = [ //woreda translations input
+            [
+                'type' => 'select',
+                'name'=> 'language',
+                'label' => 'language',
+                'value' => '',
+                'options'=> $languages
+            ],
+            [
+                'type' => 'select',
+                'name'=> 'region',
+                'label' => 'regions',
+                'value' => '',
+                'options' => $regions
+            ],
+            [
+                'type' => 'select',
+                'name'=> 'zone',
+                'label' => 'zones',
+                'value' => '',
+                'options' => ''
+            ],
+            [
+                'type' => 'select',
+                'name'=> 'woreda',
+                'label' => 'woredas',
+                'value' => '',
+                'options' => ''
+            ],
+            [
+                'type' => 'text',
+                'name'=> 'name',
+                'label' => 'name',
+                'value' => ''
+            ]
+        ];
+        $action = "/admin/woredaTranslation";
+        $title = "Add woreda's translation";
+        $form =  EzFormBuilder::getForm($inputs,$action, "POST");
+        $inputsZone = [
+            [
+                'type' => 'select',
+                'name'=> 'region',
+                'label' => 'region ',
+                'value' => '',
+                'options' => $regions
+            ],
+            [
+                'type' => 'select',
+                'name'=> 'zone',
+                'label' => 'zone',
+                'value' => '',
+                'options' => ''
+            ],
+            [
+                'type' => 'text',
+                'name'=> 'name',
+                'label' => 'name',
+                'value' => ''
+            ]
+        ];
+        $titleZone = "Add a woreda";
+        $actionZone = "/admin/zone";
+        $formZone =  EzFormBuilder::getForm($inputsZone,$actionZone, "POST");
+
+        return view('admin.woreda',compact(['form','title','zones','titleZone','formZone']));
     }
 
     /**

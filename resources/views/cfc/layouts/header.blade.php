@@ -72,13 +72,13 @@
     <li><a class="collapsible-header"><i class="fa fa-gear"></i>purchasing requests<span class="fa fa-chevron-down"></span></a>
         <ul class="collapsible-body">
             <li><a href="{{url('cfc/purchasing-request/create')}}">send purchasing request</a></li>
-            <li><a href="{{url('cfc/service')}}">my requests</a></li>
+            <li><a href="{{url('cfc/service')}}">my purchasing requests</a></li>
         </ul>
     </li>
     <li><a class="collapsible-header"><i class="fa fa-gear"></i>Manage interests<span class="fa fa-chevron-down"></span></a>
         <ul class="collapsible-body">
             <li><a href="{{url('cfc/requests-to-deliver')}}">requests to deliver</a></li>
-            <li><a href="{{url('cfc/my-requests')}}">my requests</a></li>
+            <li><a href="{{url('cfc/my-responses')}}" class="truncate">my responses for supplies and demands</a></li>
             <li><a href="{{url('cfc/transporters-bid')}}">transporters bid</a></li>
         </ul>
     </li>

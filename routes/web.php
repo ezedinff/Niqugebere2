@@ -37,8 +37,7 @@ Route::get('/show-cfc/{company}/contact-us','CompanyController@showContact');
 Route::post('/show-cfc/{company}/contact-us','ContactController@store');
 Route::get('/market/{title}', 'PagesController@goToMarket');
 Route::get('/get-subcategories','ProductSubCategoryController@getSubCategory');
-
-
+Route::get('service/{title}','ServiceController@index');
 
 Route::get('/zone','ZoneController@getZone');
 Route::get('/woreda','WoredaController@getWoreda');
@@ -48,7 +47,11 @@ Route::post('/register-company','CompanyController@store');
 Route::get('/home', 'HomeController@index');
 
 Route::get('/admin/dashboard','UserController@admin')->name('admin');
+Route::get('/admin/manage-zones','ZoneController@index');
+Route::get('admin/manage-woreda','WoredaController@index');
 Route::resource('/admin/zoneTranslation','ZoneTranslationController');
+Route::resource('/admin/woredaTranslation','WoredaTranslationController');
+Route::resource('/admin/zone','ZoneController');
 Route::resource('/admin/productSubCategory','ProductSubCategoryController');
 Route::get('/admin/cfs','CompanyController@getFSC');
 Route::get('/admin/suppliers','CompanyController@getSuppliers');
@@ -70,7 +73,7 @@ Route::get('cfc/requests-to-deliver','DemandAggrementController@showForDemandPos
 Route::get('cfc/accept-request/{agreement}','DemandAggrementController@accept');
 Route::get('cfc/transporters-bid','TransportationBidController@index');
 Route::get('cfc/accept-request-transporter/{transportationBid}','TransportationBidController@update');
-Route::get('service/{title}','ServiceController@index');
+Route::get('cfc/my-responses','DemandAggrementController@demandAndSuppliesResponses');
 Route::resource('cfc/service','ServiceController');
 Route::get('/supplier','UserController@supplier')->name("supplier");
 Route::resource('/supplier/product','InventoryController');

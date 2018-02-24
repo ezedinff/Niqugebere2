@@ -39,6 +39,18 @@ class DemandAggrementController extends Controller
             ->where(['demands.company_id' => auth()->user()->company_id, 'demand_aggrements.win' => 0])->get();
         return view('cfc.demandRequests',compact('demandRequests'));
     }
+    public function demandAndSuppliesResponses(){
+        $responseForDemands = DemandAggrement::join('demands','demands.id','=','demand_aggrements.demand_id')
+            ->join('companies','companies.id','=','demands.company_id')
+            ->join('addresses','addresses.company_id','=','companies.id')
+            ->join('woredas','woredas.id','=','addresses.woreda_id')
+            ->join('zones','woredas.zone_id','=','zones.id')
+            ->join('regions','regions.id','=','zones.region_id')
+            ->select(['companies.name','woredas.name as woreda','zones.name as zone','regions.name as region','addresses.phone','demand_aggrements.id','demands.id as demand_id','demand_aggrements.win'])
+            ->orderBy('demand_aggrements.created_at','desc')
+            ->where('demand_aggrements.company_id',auth()->user()->company_id)->paginate(2);
+        return view('cfc.myResponses',compact('responseForDemands'));
+    }
     public function accept(DemandAggrement $agreement){
         $agreement->win = 1;
         $agreement->save();

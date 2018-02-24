@@ -180,10 +180,6 @@
 <!-- Scripts -->
 <!-- Scripts -->
 <script src="{{ asset('js/jquery.min.js') }}"></script>
-<script src="{{asset('js/angular.min.js')}}"></script>
-<script src="{{asset('js/addsp.js')}}"></script>
-<script src="{{asset('js/editMall.js')}}"></script>
-<script src="{{asset('js/addHotel.js')}}"></script>
 <script src="{{asset("js/materialize.min.js")}}"></script>
 <script>
     $(function () {
@@ -202,11 +198,44 @@
             }
         );
         $('.collapsible').collapsible();
-
+        $('ul.tabs').tabs();
         $(window).load(function(){
-            // PAGE IS FULLY LOADED
-            // FADE OUT YOUR OVERLAYING DIV
             $('.big').fadeOut();
+        });
+        $(function () {
+            $(".regions").change(function () {
+                var woreda_id = $(this).find("option:selected").attr('tmp_id');
+                $.ajax({
+                    type:'get',
+                    url:"{{url('/zone')}}",
+                    data:{'id':woreda_id},
+                    success:function (data) {
+                        var elem = "<option value=\"\" disabled selected>" + "Select a zone/sub-city" + "</option>" ;
+                        for (var i=0;i<data.length;i++){
+                            elem = elem + '<option tmp_id="'+data[i].id+'" value="'+data[i].id+'">'+data[i].name+'</option>';
+                            $(".zone").html(elem);
+                        }
+                        $(".zones").material_select();
+                        console.log(data);
+                    }
+                });
+            });
+            $(".zones").change(function () {
+                var woreda_id = $(this).find("option:selected").attr('tmp_id');
+                $.ajax({
+                    type:'get',
+                    url:"{{url('/woreda')}}",
+                    data:{'id':woreda_id},
+                    success:function (data) {
+                        var elem = "<option value=\"\" disabled selected>" + "Select a woreda/kebele" + "</option>" ;
+                        for (var i=0;i<data.length;i++){
+                            elem = elem + '<option tmp_id="'+data[i].id+'" value="'+data[i].id+'">'+data[i].name+'</option>';
+                            $(".woredas").html(elem);
+                        }
+                        $(".woredas").material_select();
+                    }
+                });
+            });
         });
     });
 </script>

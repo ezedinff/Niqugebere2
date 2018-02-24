@@ -92,6 +92,7 @@ class EzFormBuilder
                                 <input type="submit" value="save" class="btn-large wave-effect wave-light teal white-text right">
                             </div>
                         </div>
+                       </form>
 		';
         return $end;
     }
@@ -156,7 +157,7 @@ class EzFormBuilder
         $part1 = '
 			<div class="row">
 			  <div class="input-field">
-			    <select id = "'.$name.'" name="'.$name.'" required>
+			    <select class="'.$label.'" id = "'.$name.'" name="'.$name.'" required>
 			      <option value="" disabled selected>select '.$label.'</option>
 		';
         $part2 = '';

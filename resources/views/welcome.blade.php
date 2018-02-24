@@ -174,7 +174,7 @@
                             </div>
                         </div>
                     </a>
-                    <a class="col l4 m4 s12" href='{{url("/cfc/service/OFF farm service")}}'>
+                    <a class="col l4 m4 s12" href='{{url("/service/OFF farm service")}}'>
                         <div class="card brown darken-3 center-align" style="height: 15em; padding-top: 6em;">
                             <div class="white-text card-title">
                                 OFF farm service

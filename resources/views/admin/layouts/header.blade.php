@@ -41,8 +41,8 @@
                 </li>
                     <li><a class="collapsible-header" ><i class="fa fa-gear"></i> Manage Details <span class="fa fa-chevron-down"></span></a>
                         <ul class="collapsible-body">
-                            <li><a href="{{url('admin/zoneTranslation/create')}}">zone</a></li>
-                            <li><a href="{{url('/admin/add-woreda')}}">woreda</a></li>
+                            <li><a href="{{url('/admin/manage-zones')}}">zone</a></li>
+                            <li><a href="{{url('/admin/manage-woreda')}}">woreda</a></li>
                             <li><a href="{{url('/admin/productSubCategory')}}">sub category</a></li>
                         </ul>
                     </li>
