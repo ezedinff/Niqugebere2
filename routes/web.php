@@ -52,6 +52,7 @@ Route::get('admin/manage-woreda','WoredaController@index');
 Route::resource('/admin/zoneTranslation','ZoneTranslationController');
 Route::resource('/admin/woredaTranslation','WoredaTranslationController');
 Route::resource('/admin/zone','ZoneController');
+Route::resource('/admin/woreda','WoredaController');
 Route::resource('/admin/productSubCategory','ProductSubCategoryController');
 Route::get('/admin/cfs','CompanyController@getFSC');
 Route::get('/admin/suppliers','CompanyController@getSuppliers');
@@ -84,7 +85,10 @@ Route::get('cfc/message-from-egaa','MessageController@index');
 Route::get('cfc/message-from-egaa/{message}','MessageController@show');
 Route::get('cfc/message-from-client','ContactController@index');
 Route::get('cfc/message-from-client/{message}','ContactController@show');
-
+Route::get('cfc/about','AboutController@index');
+Route::post('cfc/about','AboutController@store');
+Route::get('cfc/news','NewsController@index');
+Route::post('cfc/news','NewsController@store');
 //transporter section
 Route::get('/transporter','UserController@transporter')->name('transporter');
 Route::resource('/transporter/vehicle','VehicleController');

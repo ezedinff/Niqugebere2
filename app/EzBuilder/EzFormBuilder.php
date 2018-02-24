@@ -157,7 +157,7 @@ class EzFormBuilder
         $part1 = '
 			<div class="row">
 			  <div class="input-field">
-			    <select class="'.$label.'" id = "'.$name.'" name="'.$name.'" required>
+			    <select id = "'.$name.'" name="'.$name.'" required>
 			      <option value="" disabled selected>select '.$label.'</option>
 		';
         $part2 = '';

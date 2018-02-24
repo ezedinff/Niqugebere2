@@ -7,77 +7,50 @@ use Illuminate\Http\Request;
 
 class AboutController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
-        //
+        $about = About::where('company_id',auth()->user()->company_id)->get();
+        return view('cfc.about',compact('about'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+
     public function store(Request $request)
     {
-        //
+        About::create([
+        'company_id'=>auth()->user()->company_id,
+        'description'=>$request->text
+        ]);
+        $message = "you have successfully set your about page";
+        session()->regenerate();
+        session()->flash('saved',$message);
+        return redirect()->back();
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\About  $about
-     * @return \Illuminate\Http\Response
-     */
+
     public function show(About $about)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\About  $about
-     * @return \Illuminate\Http\Response
-     */
+
     public function edit(About $about)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\About  $about
-     * @return \Illuminate\Http\Response
-     */
+
     public function update(Request $request, About $about)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\About  $about
-     * @return \Illuminate\Http\Response
-     */
+
     public function destroy(About $about)
     {
         //

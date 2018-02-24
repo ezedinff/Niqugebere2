@@ -40,7 +40,7 @@
             </div>
             <div class="card">
                 <div class="card-content">
-                    {!! $form !!}
+
                 </div>
             </div>
         </div>

@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('content')
+<main>
     <header>
         <div id="head2">
             @include('showNavBar')
@@ -16,4 +17,6 @@
             </div>
         </div>
     </div>
+</main>
+
 @endsection

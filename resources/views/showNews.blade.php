@@ -5,11 +5,19 @@
             @include('showNavBar')
         </div>
     </header>
+    <style>
+        p{
+            position: relative;
+        }
+        p img{
+            position: relative !important;
+        }
+    </style>
     <div class="row">
         <div class="container">
             <div class="card">
-                <div class="card-title green white-text" style="padding: 2%;">
-                    coming soon
+                <div class="card-content">
+                    {!! $news[0]->description !!}
                 </div>
             </div>
         </div>

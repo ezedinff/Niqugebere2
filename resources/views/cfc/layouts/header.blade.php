@@ -93,6 +93,8 @@
             <li><a href="{{url('cfc/slide')}}">slide</a></li>
             <li><a href="{{url('cfc/cover')}}">cover</a></li>
             <li><a href="{{url('cfc/logo')}}">logo</a></li>
+            <li><a href="{{url('cfc/about')}}">About page</a></li>
+            <li><a href="{{url('cfc/news')}}">News & Event</a></li>
         </ul>
     </li>
     <li><a class="collapsible-header"><i class="fa fa-users"></i>Manage user<span class="fa fa-chevron-down"></span></a>

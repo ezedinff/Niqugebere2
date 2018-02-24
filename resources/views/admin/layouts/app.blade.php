@@ -202,39 +202,20 @@
         $(window).load(function(){
             $('.big').fadeOut();
         });
-        $(function () {
-            $(".regions").change(function () {
-                var woreda_id = $(this).find("option:selected").attr('tmp_id');
-                $.ajax({
-                    type:'get',
-                    url:"{{url('/zone')}}",
-                    data:{'id':woreda_id},
-                    success:function (data) {
-                        var elem = "<option value=\"\" disabled selected>" + "Select a zone/sub-city" + "</option>" ;
-                        for (var i=0;i<data.length;i++){
-                            elem = elem + '<option tmp_id="'+data[i].id+'" value="'+data[i].id+'">'+data[i].name+'</option>';
-                            $(".zone").html(elem);
-                        }
-                        $(".zones").material_select();
-                        console.log(data);
+        $("#region").change(function () {
+            var woreda_id = $(this).find("option:selected").attr('value');
+            $.ajax({
+                type:'get',
+                url:"{{url('/zone')}}",
+                data:{'id':woreda_id},
+                success:function (data) {
+                    var elem = "<option value=\"\" disabled selected>" + "Select a zone/sub-city" + "</option>" ;
+                    for (var i=0;i<data.length;i++){
+                        elem = elem + '<option tmp_id="'+data[i].id+'" value="'+data[i].id+'">'+data[i].name+'</option>';
+                        $("#zone").html(elem);
                     }
-                });
-            });
-            $(".zones").change(function () {
-                var woreda_id = $(this).find("option:selected").attr('tmp_id');
-                $.ajax({
-                    type:'get',
-                    url:"{{url('/woreda')}}",
-                    data:{'id':woreda_id},
-                    success:function (data) {
-                        var elem = "<option value=\"\" disabled selected>" + "Select a woreda/kebele" + "</option>" ;
-                        for (var i=0;i<data.length;i++){
-                            elem = elem + '<option tmp_id="'+data[i].id+'" value="'+data[i].id+'">'+data[i].name+'</option>';
-                            $(".woredas").html(elem);
-                        }
-                        $(".woredas").material_select();
-                    }
-                });
+                    $("#zone").material_select();
+                }
             });
         });
     });

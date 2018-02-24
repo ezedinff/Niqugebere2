@@ -67,7 +67,7 @@ class WoredaController extends Controller
             [
                 'type' => 'select',
                 'name'=> 'region',
-                'label' => 'region ',
+                'label' => 'region',
                 'value' => '',
                 'options' => $regions
             ],
@@ -86,7 +86,7 @@ class WoredaController extends Controller
             ]
         ];
         $titleZone = "Add a woreda";
-        $actionZone = "/admin/zone";
+        $actionZone = "/admin/woreda";
         $formZone =  EzFormBuilder::getForm($inputsZone,$actionZone, "POST");
 
         return view('admin.woreda',compact(['form','title','zones','titleZone','formZone']));
@@ -110,7 +110,14 @@ class WoredaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Woreda::create([
+            'zone_id'=>$request->zone,
+            'name'=>$request->name
+        ]);
+        $message = "you have successfully saved new woreda for";
+        session()->regenerate();
+        session()->flash('saved',$message);
+        return redirect()->back();
     }
 
     /**
