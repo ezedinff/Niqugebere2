@@ -29,6 +29,13 @@
             'csrfToken' => csrf_token(),
         ]) !!};
     </script>
+    <style>
+        .truncate {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    </style>
 </head>
 <body>
     <header>

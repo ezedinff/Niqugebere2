@@ -80,6 +80,7 @@ Route::get('/supplier','UserController@supplier')->name("supplier");
 Route::resource('/supplier/product','InventoryController');
 Route::get('/supplier/demands','DemandController@cfcDemand');
 Route::get('cfc/purchasing-request/create','PurchasingRequestController@create');
+Route::get('cfc/my-purchasing-request','PurchasingRequestController@myRequests');
 Route::post('cfc/purchasing-request','PurchasingRequestController@store');
 Route::get('cfc/message-from-egaa','MessageController@index');
 Route::get('cfc/message-from-egaa/{message}','MessageController@show');

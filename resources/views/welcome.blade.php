@@ -13,15 +13,17 @@
             <div class="overlay">
                 <div class="row-height">
                     <div class="col-height col-middle center">
-                        <h1>Farm Input Purchasing, Made Easy</h1>
-                        <p class="white-text">Join the Ethiopia's leading farms already embracing farming's most powerful purchasing&nbsp;platform</p>
+                        <h1 style=" text-shadow: 2px 2px #252525;">Farm Input Purchasing, Made Easy</h1>
+                        <p style=" text-shadow: 2px 2px #252525;" class="white-text">Join to One Digital Belt Service for Ethiopia’s Farmers platform!</p>
                         <div class="row md-padding-top">
                             <div class="container">
-                                <div class="col s6" style="text-align: right;">
+                                <div class="col s6" style="text-align: right; padding-right: 0.5em;">
                                     <a href="" style="display:inline-block;overflow:hidden;background:url(//linkmaker.itunes.apple.com/assets/shared/badges/en-us/appstore-lrg.svg) no-repeat;width:135px;height:40px;background-size:contain;"></a>
                                 </div>
-                                <div class="col s6" style="text-align: left;">
-                                    <a href=""><img alt="Get it on Google Play" style="width: 150px; height: 60px;position: relative; margin-top: -10px" src="https://play.google.com/intl/en_gb/badges/images/generic/en_badge_web_generic.png"></a>
+                                <div class="col s6" style="text-align: left; padding-right: 0.5em;">
+                                    <a href="">
+                                        <img alt="Get it on Google Play" style="width: 150px; height: 60px;position: relative; margin-top: -10px" src="{{asset('img/playstore.png')}}">
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -34,8 +36,8 @@
     <div class="section scrollspy service">
         <div class="row">
             <div class="sec-title text-center">
-                <h2 class="flow-text he" style="text-align: center;">Markets</h2>
-                <p class="pa">The Key Features of our Job</p>
+                <h2 class="flow-text he" style="text-align: center;">VIRTUAL MARKET PLACE</h2>
+                <p class="pa">The Key Input Market Categories</p>
             </div>
            <div class="container">
               <div class="row">
@@ -89,8 +91,8 @@
 
     <div class="section scrollspy white">
         <div class="sec-title text-center">
-            <h2 class="flow-text he">commercial farm center services</h2>
-            <p class="pa">List of commercial farm center services</p>
+            <h2 class="flow-text he text-capitalize">commercial farm center services</h2>
+            <p class="pa">Top agriculture buisness companies in Ethiopia</p>
 
             <?php
                 $cfcs = \App\Company::where('category_id',1)->get();
@@ -192,7 +194,6 @@
             <p class="pa">stay connected with agricultural news.</p>
         </div>
 
-
        <div class="container">
              <div class="row">
                  <div class="col l6 m6 s12">
@@ -202,7 +203,7 @@
                         <div class="overlay"></div>
                         <div class="button"><a href="#"> Read more </a></div>
                     </div>
-                     <p> a  bridge  grant in  the  amount  of  $44,000toEGAA to  cover  technical  and administrative costs of  the  company  until  the  company  generates  revenueand  develops positive  cash flows through the importation of agricultural inputs.</p>
+                     <p> ” ....a bridge grant in the amount of $44,000toEGAA to cover technical and administrative costs of the company until the company generates revenue and develops positive cash flows through the importation of agricultural inputs.”</p>
                  </div>
                  <div class="col l6 m6 s12" >
                      <div class="box">
@@ -211,7 +212,8 @@
                          <div class="overlay"></div>
                          <div class="button"><a href="#"> Read more </a></div>
                      </div>
-                     <p>Keith Polo published on Agra Europe: Private sector partnerships can boost food security in developing world</p>
+                     <p>Private sector partnerships can boost food security in developing world.</p>
+                     <p>Source: Keith Polo published on Agra Europe</p>
                  </div>
              </div>
        </div>
@@ -220,7 +222,7 @@
     <div class="section scrollspy">
         <div class="sec-title text-center">
             <h2 class="flow-text he">Gallery</h2>
-            <p class="pa">stay connected with agricultural news.</p>
+            <p class="pa">Stay connected with Farmers ON Farm and Off Farm.</p>
         </div>
         <div class="container">
             <div class="row">
@@ -240,7 +242,7 @@
     <div class="white section scrollspy col l12 m12 s12 center-align">
         <div class="sec-title text-center">
             <h2 class="flow-text he">Our partners</h2>
-            <p class="pa">this are the our partners that we work with.</p>
+            <p class="pa">Our partners that we work with CNFA/GIAF project and EGAA</p>
         </div>
         <div class="col l3 m3 s3"><img class="responsive-img" src="{{asset('img/cnfa.png')}}" alt="" style="position: relative;"></div>
     </div>

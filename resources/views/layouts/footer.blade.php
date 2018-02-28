@@ -1,12 +1,37 @@
 <div id="footer" class="row">
-    <div class="col l12  m12  s12" style="padding-left: 50px; padding-right: 50px;">
-        <div class="col l4 m4 s12" style="text-align: center">
-
+    <div class="col l12  m12 " style="padding-left: 50px; padding-right: 50px;">
+        <div class="col l2 m2 s12 offset-l1 offset-m1" style="text-align: center">
+            <span id="text-secondary">30</span> <br>
+            <span id="text-small" style="text-shadow: 1px 1px 1px #000;">REGISTERED CFSCs</span>
         </div>
-        <div class="col l4 m4 s12" style="text-align: center">
-
+        <div class="col l2 m2 s12" style="text-align: center">
+            <span id="text-secondary">1000</span> <br>
+            <span id="text-small" style="text-shadow: 1px 1px 1px #000; text-transform: uppercase;">Agro-dealers</span>
         </div>
-        <div class="col l4 m4 s12" style="text-align: center">
+        <div class="col l2 m2 s12" style="text-align: center">
+            <span id="text-secondary">1000</span> <br>
+            <span id="text-small" style="text-shadow: 1px 1px 1px #000; text-transform: uppercase;">Suppliers</span>
+        </div>
+        <div class="col l2 m2 s12" style="text-align: center">
+            <span id="text-secondary">1000</span> <br>
+            <span id="text-small" style="text-shadow: 1px 1px 1px #000; text-transform: uppercase;">Vehicles</span>
+        </div>
+        <div class="col l2 m2 s12" style="text-align: center">
+            <span id="text-secondary"> 10,000</span> <br>
+            <span id="text-small" style="text-shadow: 1px 1px 1px #000; text-transform: uppercase;">Donkey & Horses</span>
+        </div>
+        <p></p>
+        <div class="row md-padding-top" style=" position: relative; padding-top: 10em !important;">
+            <div class="container">
+                <div class="col s6" style="text-align: right; padding-right: 0.5em;">
+                    <a href="" style="display:inline-block;overflow:hidden;background:url(//linkmaker.itunes.apple.com/assets/shared/badges/en-us/appstore-lrg.svg) no-repeat;width:135px;height:40px;background-size:contain;"></a>
+                </div>
+                <div class="col s6" style="text-align: left; padding-right: 0.5em;">
+                    <a href="">
+                        <img alt="Get it on Google Play" style="width: 150px; height: 60px;position: relative; margin-top: -10px" src="{{asset('img/playstore.png')}}">
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -15,10 +40,10 @@
         <div class="col l3 m3 s12 offset-s2">
             <label>Address:</label>
             <ul style="list-style: none; padding-left: 20px;">
-                <li>Niqugebere Office </li>
-                <li>Kazanchz Nigist Tower 6th Floor Room No 603,</li>
+                <li>IT industry park/IT Village</li>
+                <li>ICT incubation Hub</li>
                 <li>Addis ababa, Ethiopia.</li>
-                <li>Call Us: (+251) -0944-181080 &nbsp;  &nbsp; or <br> &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (+251)-118267970</li>
+                <li>Mobile-O944181080</li>
                 <li>Mail: info@malladdis.com</li>
             </ul>
         </div>
@@ -54,7 +79,7 @@
 <div class="footer-copyright" style="background-color: #101420;">
     <div class="container">
         <div class="row">
-            <span class="col l6 m6 s12">© 2017 Niqugebere All Copyright Received</span>
+            <span class="col l6 m6 s12">© 2018 Niqugebere All Copyright Received</span>
             <span class="col l6 m6 s12 right-align">
                     <a class="grey-text text-lighten-4  fa fa-facebook" href="#!" style="font-size: x-large;padding: 10px;color: #fff; text-shadow: 1px 1px 1px #000;"></a>
                     <a class="grey-text text-lighten-4  fa fa-twitter" href="#!" style="font-size: x-large;padding: 10px;color: #fff; text-shadow: 1px 1px 1px #000;"></a>

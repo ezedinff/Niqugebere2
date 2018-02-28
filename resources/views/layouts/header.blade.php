@@ -58,16 +58,16 @@
                     <li><a class='dropdown-button menu' href="{{url('/buyer')}}" data-activates='dropdown1' >Digital Lease space</a></li>
                     <li><a href="" class="dropdown-button menu" data-activates='dropdown2' >Agri. Apps</a></li>
                     <li><a href="" class="dropdown-button menu" data-activates='dropdown3'>Climate Change & Research</a></li>
-                    <li><a href="" class="dropdown-button menu" data-activates='dropdown4'>Research, Innovation and Commercialization</a></li>
-                    <li><a href="" class="dropdown-button menu" data-activates='dropdown5'>Consultancy and Partnership Dev't</a></li>
+                    <li><a href="" class="dropdown-button menu" data-activates='dropdown4'>Innovation and Commercialization</a></li>
+                    <li><a href="" class="dropdown-button menu" data-activates='dropdown5'>Consultancy and Partnership</a></li>
                 </ul>
             </div>
             <ul class="side-nav green darken-3" id="mobile-demo">
-                <li><a href="" class="menu">Digital Lease space Service</a></li>
-                <li><a href="" class="menu">Agricultural Apps Service</a></li>
-                <li><a href="" class="menu">Climate Change & Research Service</a></li>
-                <li><a href="" class="menu">Research, Innovation and Commercialization</a></li>
-                <li><a href=""  class="menu">Consultancy and Partnership Development</a></li>
+                <li><a href="" class="menu truncate">Digital Lease space Service</a></li>
+                <li><a href="" class="menu truncate">Agricultural Apps Service</a></li>
+                <li><a href="" class="menu truncate">Climate Change & Research Service</a></li>
+                <li><a href="" class="menu truncate">Innovation and Commercialization</a></li>
+                <li><a href=""  class="menu truncate">Consultancy and Partnership</a></li>
                 @if (Auth::guest())
                     <li id="navMenus"><a href="{{url('/login')}}" style="text-transform: uppercase; color:#fff;">sign in</a></li>
                     <li id="navMenus"><a href="{{url('/register')}}" style="text-transform: uppercase; color:#fff;" >register</a></li>

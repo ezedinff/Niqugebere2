@@ -18,15 +18,17 @@ class InventoryController extends Controller
     public function index()
     {
         $zones  = Inventory::join('product_sub_categories','inventories.product_sub_category_id','=','product_sub_categories.id')
-                            ->select(['inventories.price','inventories.quantity','product_sub_categories.name'])
+                            ->select(['inventories.product_name','inventories.id','inventories.quantity','product_sub_categories.name'])
                             ->where('company_id',auth()->user()->company_id)->get();
         $inputs = [
             'headers' => [
-                'product type'
+                'product category',
+                'product name',
+                'quantity'
             ],
             'columns' => [
                 'name',
-                'price',
+                'product_name',
                 'quantity',
             ],
             'buttons' => [
@@ -91,16 +93,16 @@ class InventoryController extends Controller
      */
     public function store(Request $request)
     {
-        $company_id = 1;
         Inventory::create([
-            'company_id'=> $company_id,
-            'title'=>$request->title,
-            'price'=>$request->price,
-            'total_quantity' => $request->quantity,
+            'company_id'=> auth()->user()->company_id,
             'product_sub_category_id' => $request->category,
+            'product_name'=>$request->title,
+            'quantity' => $request->quantity,
 
         ]);
-        $message = "you have successfully posted your supply";
+
+
+        $message = "you have successfully submitted your invetories. your coin keep growing";
         session()->regenerate();
         session()->flash('saved',$message);
         return redirect()->back();
@@ -132,7 +134,7 @@ class InventoryController extends Controller
                 'type' => 'text',
                 'name'=> 'title',
                 'label' => 'name of the product',
-                'value' => $inventory->title,
+                'value' => $inventory->product_name,
                 'options'=> ""
             ],
             [
@@ -141,13 +143,6 @@ class InventoryController extends Controller
                 'label' => 'product category',
                 'value' => $category,
                 'options'=> $categories
-            ],
-            [
-                'type' => 'number',
-                'name'=> 'price',
-                'label' => 'price',
-                'value' => $inventory->price,
-                'options' => ""
             ],
             [
                 'type' => 'number',

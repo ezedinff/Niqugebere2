@@ -66,13 +66,12 @@
     <li><a class="collapsible-header"><i class="fa fa-gear"></i>Manage Service<span class="fa fa-chevron-down"></span></a>
         <ul class="collapsible-body">
             <li><a href="{{url('cfc/service/create')}}">post service</a></li>
-            <li><a href="{{url('cfc/service')}}">my posted services</a></li>
         </ul>
     </li>
     <li><a class="collapsible-header"><i class="fa fa-gear"></i>purchasing requests<span class="fa fa-chevron-down"></span></a>
         <ul class="collapsible-body">
             <li><a href="{{url('cfc/purchasing-request/create')}}">send purchasing request</a></li>
-            <li><a href="{{url('cfc/service')}}">my purchasing requests</a></li>
+            <li><a href="{{url('cfc/my-purchasing-request')}}">my purchasing requests</a></li>
         </ul>
     </li>
     <li><a class="collapsible-header"><i class="fa fa-gear"></i>Manage interests<span class="fa fa-chevron-down"></span></a>

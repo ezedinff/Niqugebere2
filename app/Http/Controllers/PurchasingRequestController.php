@@ -58,6 +58,14 @@ class PurchasingRequestController extends Controller
         return view('EGAA.requests',compact(['purchases','table']));
     }
 
+    public function myRequests(){
+        $requests = PurchasingRequest::join('product_sub_categories','product_sub_categories.id','=','purchasing_requests.product_sub_category_id')
+                                        ->join('product_categories','product_categories.id','=','product_sub_categories.product_category_id')
+                                        ->select(['product_categories.name as category','product_sub_categories.name as sub','purchasing_requests.product_name','purchasing_requests.quantity'])
+                                        ->where('purchasing_requests.company_id',auth()->user()->company_id)->get();
+        return view('cfc.purchasingRequest',compact('requests'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *
